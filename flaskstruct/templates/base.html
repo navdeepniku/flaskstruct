@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-	    <title>My Cloud - login page</title>
+	    <title>My Cloud {{ title }}</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="static/css/bootstrap.min.css" rel="stylesheet" media="screen">
 	</head>
@@ -13,12 +13,14 @@
 			
 			<!-- errors in code -->
 			{% if error %}
-				<p class="error"><strong>Error:</strong>{{ error }}</p>
+				<p class="error alert alert-danger"><strong>Error:</strong>{{ error }}</p>
 			{% endif %}
 			
 			<!-- flash messages  -->
 			{% for message in get_flashed_messages()%}
-				{{ message }}
+				<span>
+				<p class="alert alert-info">{{ message }}</p>
+				</span>
 			{% endfor %}
 			
 		</div>

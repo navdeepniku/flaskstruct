@@ -13,3 +13,5 @@ mysql.init_app(app)
 def connection():
 	c = mysql.connection.cursor()
 	return c
+def commit():
+    mysql.connection.commit()
